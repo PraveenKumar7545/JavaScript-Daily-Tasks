@@ -1,7 +1,7 @@
 # Day 01 - JavaScript Conditions 🚀
 
 Day 01 focuses on practicing basic JavaScript conditional statements and decision-making through simple beginner-friendly tasks.
-
+  
 ---
 
 ## 📝 Tasks
