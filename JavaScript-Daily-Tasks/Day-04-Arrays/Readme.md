@@ -2,7 +2,7 @@
 
 This day focuses on practicing **JavaScript Arrays** using basic array operations, loops, conditions, and data processing.
 
----
+---     
 
 ## 📚 Tasks Completed
 
