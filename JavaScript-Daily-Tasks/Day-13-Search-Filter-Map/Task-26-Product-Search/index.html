@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Search</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0f172a;
+        }
+
+        input {
+            width: 70%;
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 14px 22px;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #output {
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .price {
+            color: #2563eb;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🔎 Product Search</h1>
+
+        <p>Search your favourite product</p>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Example: Laptop"
+        >
+
+        <button onclick="searchProduct()">Search</button>
+
+        <div id="output"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
