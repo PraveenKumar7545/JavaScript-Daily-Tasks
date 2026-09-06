@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Calculator</title>
+</head>
+<body>
+
+    <h1>Price Calculator</h1>
+
+    <label>Enter Product Prices:</label>
+
+    <input
+        type="text"
+        id="priceInput"
+        placeholder="50,100,250,500"
+    >
+
+    <button onclick="calculatePrice()">Calculate</button>
+
+    <h3>Original Prices:</h3>
+    <p id="originalPrices"></p>
+
+    <h3>Discounted Prices:</h3>
+    <p id="discountedPrices"></p>
+
+    <h3>Original Total:</h3>
+    <p id="originalTotal"></p>
+
+    <h3>Discount Amount:</h3>
+    <p id="discountAmount"></p>
+
+    <h3>Final Price:</h3>
+    <p id="finalPrice"></p>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
