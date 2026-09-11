@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Search</title>
+</head>
+<body>
+
+    <h1>Users</h1>
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Search user..."
+        oninput="searchUsers()"
+    >
+
+    <button onclick="getUsers()">Load Users</button>
+
+    <ul id="userList"></ul>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
