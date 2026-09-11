@@ -1,0 +1,53 @@
+/* ================================
+Student Management System
+Custom CSS
+================================ */
+
+/* Body */
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Table */
+
+table {
+min-width: 900px;
+}
+
+/* Table Row Hover */
+
+tbody tr {
+transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+background-color: #f8fafc;
+}
+
+/* Input */
+
+input,
+select,
+button {
+font-family: inherit;
+}
+
+/* Remove number input arrows */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+
+main {
+    padding-bottom: 30px;
+}
+
+}

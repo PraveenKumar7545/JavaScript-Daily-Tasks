@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Management System</title>
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body class="bg-slate-100 min-h-screen">
+
+
+<!-- Header -->
+<header class="bg-slate-900 text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-5">
+        <h1 class="text-2xl md:text-3xl font-bold">
+            Student Management System
+        </h1>
+
+        <p class="text-slate-400 mt-1">
+            Manage your student records easily
+        </p>
+    </div>
+</header>
+
+<!-- Main Container -->
+<main class="max-w-7xl mx-auto px-6 py-8">
+
+    <!-- Statistics -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+
+        <div class="bg-white rounded-xl shadow p-6">
+            <p class="text-slate-500 text-sm">
+                Total Students
+            </p>
+
+            <h2 id="totalStudents"
+                class="text-3xl font-bold text-slate-900 mt-2">
+                0
+            </h2>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-6">
+            <p class="text-slate-500 text-sm">
+                Male Students
+            </p>
+
+            <h2 id="maleStudents"
+                class="text-3xl font-bold text-blue-600 mt-2">
+                0
+            </h2>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-6">
+            <p class="text-slate-500 text-sm">
+                Female Students
+            </p>
+
+            <h2 id="femaleStudents"
+                class="text-3xl font-bold text-pink-600 mt-2">
+                0
+            </h2>
+        </div>
+
+    </section>
+
+
+    <!-- Add Student Form -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+
+        <div class="flex items-center justify-between mb-6">
+            <h2 id="formTitle"
+                class="text-xl font-bold text-slate-900">
+                Add Student
+            </h2>
+        </div>
+
+        <form id="studentForm">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                <!-- Student Name -->
+                <div>
+                    <label for="studentName"
+                        class="block text-sm font-medium text-slate-700 mb-2">
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter student name"
+                        class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-slate-500"
+                    >
+                </div>
+
+
+                <!-- Roll Number -->
+                <div>
+                    <label for="rollNumber"
+                        class="block text-sm font-medium text-slate-700 mb-2">
+                        Roll Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="rollNumber"
+                        placeholder="Enter roll number"
+                        class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-slate-500"
+                    >
+                </div>
+
+
+                <!-- Email -->
+                <div>
+                    <label for="email"
+                        class="block text-sm font-medium text-slate-700 mb-2">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email address"
+                        class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-slate-500"
+                    >
+                </div>
+
+
+                <!-- Department -->
+                <div>
+                    <label for="department"
+                        class="block text-sm font-medium text-slate-700 mb-2">
+                        Department
+                    </label>
+
+                    <select
+                        id="department"
+                        class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-slate-500">
+
+                        <option value="">
+                            Select Department
+                        </option>
+
+                        <option value="IT">
+                            Information Technology
+                        </option>
+
+                        <option value="CSE">
+                            Computer Science
+                        </option>
+
+                        <option value="ECE">
+                            Electronics & Communication
+                        </option>
+
+                        <option value="EEE">
+                            Electrical & Electronics
+                        </option>
+
+                        <option value="MECH">
+                            Mechanical
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <!-- Age -->
+                <div>
+                    <label for="age"
+                        class="block text-sm font-medium text-slate-700 mb-2">
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        placeholder="Enter age"
+                        min="1"
+                        class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-slate-500"
+                    >
+                </div>
+
+
+                <!-- Gender -->
+                <div>
+                    <label for="gender"
+                        class="block text-sm font-medium text-slate-700 mb-2">
+                        Gender
+                    </label>
+
+                    <select
+                        id="gender"
+                        class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-slate-500">
+
+                        <option value="">
+                            Select Gender
+                        </option>
+
+                        <option value="Male">
+                            Male
+                        </option>
+
+                        <option value="Female">
+                            Female
+                        </option>
+
+                    </select>
+                </div>
+
+            </div>
+
+
+            <!-- Error Message -->
+            <p id="errorMessage"
+                class="text-red-500 text-sm mt-4 hidden">
+            </p>
+
+
+            <!-- Buttons -->
+            <div class="flex gap-3 mt-6">
+
+                <button
+                    type="submit"
+                    id="submitButton"
+                    class="bg-slate-900 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-medium transition">
+                    Add Student
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelButton"
+                    class="bg-slate-200 hover:bg-slate-300 text-slate-800 px-6 py-3 rounded-lg font-medium hidden">
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- Student List -->
+    <section class="bg-white rounded-xl shadow p-6">
+
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+
+            <div>
+                <h2 class="text-xl font-bold text-slate-900">
+                    Student List
+                </h2>
+
+                <p class="text-sm text-slate-500 mt-1">
+                    All registered students
+                </p>
+            </div>
+
+
+            <!-- Search -->
+            <div>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search student..."
+                    class="border border-slate-300 rounded-lg px-4 py-3 w-full md:w-72 focus:outline-none focus:ring-2 focus:ring-slate-500"
+                >
+            </div>
+
+        </div>
+
+
+        <!-- Table -->
+        <div class="overflow-x-auto">
+
+            <table class="w-full text-left">
+
+                <thead>
+                    <tr class="border-b border-slate-200">
+
+                        <th class="px-4 py-4 text-sm font-semibold text-slate-600">
+                            #
+                        </th>
+
+                        <th class="px-4 py-4 text-sm font-semibold text-slate-600">
+                            Name
+                        </th>
+
+                        <th class="px-4 py-4 text-sm font-semibold text-slate-600">
+                            Roll No
+                        </th>
+
+                        <th class="px-4 py-4 text-sm font-semibold text-slate-600">
+                            Email
+                        </th>
+
+                        <th class="px-4 py-4 text-sm font-semibold text-slate-600">
+                            Department
+                        </th>
+
+                        <th class="px-4 py-4 text-sm font-semibold text-slate-600">
+                            Age
+                        </th>
+
+                        <th class="px-4 py-4 text-sm font-semibold text-slate-600">
+                            Gender
+                        </th>
+
+                        <th class="px-4 py-4 text-sm font-semibold text-slate-600">
+                            Actions
+                        </th>
+
+                    </tr>
+                </thead>
+
+                <tbody id="studentTableBody">
+
+                    <!-- JavaScript will add students here -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- Empty Message -->
+        <div id="emptyMessage"
+            class="text-center py-10 text-slate-500">
+
+            <p class="text-lg font-medium">
+                No students found
+            </p>
+
+            <p class="text-sm mt-1">
+                Add your first student using the form above.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
