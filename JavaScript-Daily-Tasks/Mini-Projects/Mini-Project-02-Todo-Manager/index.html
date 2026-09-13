@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Todo Manager</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-100 min-h-screen">
+
+    <header class="bg-slate-900 text-white">
+        <div class="max-w-5xl mx-auto px-5 py-6">
+            <h1 class="text-3xl font-bold">
+                Todo Manager
+            </h1>
+
+            <p class="text-slate-400 mt-1">
+                Manage your daily tasks easily
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-5 py-8">
+
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+
+            <div class="bg-white rounded-xl shadow p-6">
+                <p class="text-sm text-slate-500">
+                    Total Tasks
+                </p>
+
+                <h2 id="totalTasks"
+                    class="text-3xl font-bold mt-2 text-slate-900">
+                    0
+                </h2>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-6">
+                <p class="text-sm text-slate-500">
+                    Completed
+                </p>
+
+                <h2 id="completedTasks"
+                    class="text-3xl font-bold mt-2 text-green-600">
+                    0
+                </h2>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-6">
+                <p class="text-sm text-slate-500">
+                    Pending
+                </p>
+
+                <h2 id="pendingTasks"
+                    class="text-3xl font-bold mt-2 text-orange-500">
+                    0
+                </h2>
+            </div>
+
+        </section>
+
+        <section class="bg-white rounded-xl shadow p-6 mb-8">
+
+            <h2 id="formTitle"
+                class="text-xl font-bold text-slate-900 mb-5">
+                Add Todo
+            </h2>
+
+            <form id="todoForm">
+
+                <div class="flex flex-col sm:flex-row gap-3">
+
+                    <input
+                        type="text"
+                        id="todoInput"
+                        placeholder="Enter your task..."
+                        class="flex-1 border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-slate-500">
+
+                    <button
+                        type="submit"
+                        id="submitButton"
+                        class="bg-slate-900 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-medium transition">
+                        Add Task
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelButton"
+                        class="hidden bg-slate-200 hover:bg-slate-300 text-slate-800 px-6 py-3 rounded-lg font-medium">
+                        Cancel
+                    </button>
+
+                </div>
+
+                <p id="errorMessage"
+                    class="hidden text-red-500 text-sm mt-3">
+                </p>
+
+            </form>
+
+        </section>
+
+        <section class="bg-white rounded-xl shadow p-6">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">
+                        My Tasks
+                    </h2>
+
+                    <p class="text-sm text-slate-500 mt-1">
+                        Track your daily activities
+                    </p>
+                </div>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search task..."
+                    class="border border-slate-300 rounded-lg px-4 py-3 w-full md:w-72 focus:outline-none focus:ring-2 focus:ring-slate-500">
+
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+
+                <button
+                    data-filter="all"
+                    class="filterButton activeFilter px-4 py-2 rounded-lg text-sm font-medium">
+                    All
+                </button>
+
+                <button
+                    data-filter="pending"
+                    class="filterButton px-4 py-2 rounded-lg text-sm font-medium">
+                    Pending
+                </button>
+
+                <button
+                    data-filter="completed"
+                    class="filterButton px-4 py-2 rounded-lg text-sm font-medium">
+                    Completed
+                </button>
+
+            </div>
+
+            <div id="todoList"
+                class="space-y-3">
+            </div>
+
+            <div id="emptyMessage"
+                class="text-center py-10 text-slate-500">
+
+                <p class="text-lg font-medium">
+                    No tasks found
+                </p>
+
+                <p class="text-sm mt-1">
+                    Add a task to get started.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

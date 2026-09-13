@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input,
+button {
+    font-family: inherit;
+}
+
+.filterButton {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+.filterButton:hover {
+    background-color: #cbd5e1;
+}
+
+.activeFilter {
+    background-color: #0f172a;
+    color: white;
+}
+
+.todoItem {
+    transition: 0.2s ease;
+}
+
+.todoItem:hover {
+    transform: translateY(-1px);
+}
+
+.completedTodo {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+@media (max-width: 640px) {
+    .todoItem {
+        align-items: flex-start;
+    }
+}
