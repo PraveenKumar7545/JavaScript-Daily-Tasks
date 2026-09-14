@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-100 flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md">
+
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+
+            <h1 class="text-3xl font-bold text-center text-slate-800 mb-6">
+                Weather App
+            </h1>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Enter city name"
+                    class="w-full border border-slate-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
+                >
+
+                <button
+                    onclick="getWeather()"
+                    class="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700"
+                >
+                    Search
+                </button>
+
+            </div>
+
+            <p
+                id="loading"
+                class="hidden text-center text-blue-600 mt-6"
+            >
+                Loading...
+            </p>
+
+            <p
+                id="error"
+                class="hidden text-center text-red-500 mt-6"
+            ></p>
+
+            <div
+                id="weatherCard"
+                class="hidden mt-6"
+            >
+
+                <div class="text-center">
+
+                    <h2
+                        id="cityName"
+                        class="text-2xl font-bold text-slate-800"
+                    ></h2>
+
+                    <p
+                        id="temperature"
+                        class="text-5xl font-bold text-blue-600 mt-4"
+                    ></p>
+
+                    <p
+                        id="weatherCondition"
+                        class="text-lg text-slate-600 mt-2"
+                    ></p>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mt-6">
+
+                    <div class="bg-slate-100 rounded-xl p-4 text-center">
+
+                        <p class="text-sm text-slate-500">
+                            Humidity
+                        </p>
+
+                        <p
+                            id="humidity"
+                            class="text-xl font-bold text-slate-800 mt-1"
+                        ></p>
+
+                    </div>
+
+                    <div class="bg-slate-100 rounded-xl p-4 text-center">
+
+                        <p class="text-sm text-slate-500">
+                            Wind Speed
+                        </p>
+
+                        <p
+                            id="windSpeed"
+                            class="text-xl font-bold text-slate-800 mt-1"
+                        ></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="text-center text-sm text-slate-500 mt-4">
+            Weather data powered by Open-Meteo
+        </p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
