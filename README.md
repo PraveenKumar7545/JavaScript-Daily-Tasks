@@ -3,7 +3,7 @@
 A collection of **daily JavaScript practice tasks and mini projects** created while learning JavaScript from beginner to intermediate level.
 
 🔗 **Live Demo:**
-https://praveenkumar7545.github.io/JavaScript-Daily-Tasks/
+https://praveenkumar7545.github.io/JavaScript-Daily-Tasks/ 
 
 ---
 
