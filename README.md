@@ -6,7 +6,7 @@ A collection of **daily JavaScript practice tasks and mini projects** created wh
 https://praveenkumar7545.github.io/JavaScript-Daily-Tasks/ 
 
 ---
-
+ 
 ## 📌 Project Overview
 
 This repository contains **19 days of JavaScript practice** with **46 individual tasks** and **3 mini projects**.
