@@ -4,7 +4,7 @@ A collection of **daily JavaScript practice tasks and mini projects** created wh
 
 🔗 **Live Demo:**
 https://praveenkumar7545.github.io/JavaScript-Daily-Tasks/ 
- 
+  
 ---
  
 ## 📌 Project Overview
